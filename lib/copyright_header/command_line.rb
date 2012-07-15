@@ -8,7 +8,7 @@ module CopyrightHeader
     def initialize(options = {})
       begin
         @options = options
-        @options[:base_path] = File.expand_path File.dirname($0) + "/../"
+        @options[:base_path] = File.expand_path File.dirname(__FILE__) + "/../../"
         @optparse = OptionParser.new do |opts|
           opts.banner = "Usage: #{$0} options [file]"
           
@@ -25,7 +25,7 @@ module CopyrightHeader
             @options[:license_file] = file
           end
 
-          opts.on( '--license [GPL3|MIT]', 'Use LICENSE as header' ) do|license|
+          opts.on( '--license [' + Dir.glob(@options[:base_path] + '/licenses/*').map { |f| File.basename(f, '.erb') }.join('|') + ']', 'Use LICENSE as header' ) do|license|
             @options[:license] = license
             @options[:license_file] = @options[:base_path] + '/licenses/' + license + '.erb'
           end
