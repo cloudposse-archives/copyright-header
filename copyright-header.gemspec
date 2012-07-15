@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.version     = CopyrightHeader::VERSION
   s.authors     = ["Erik Osterman"]
   s.email       = ["e@osterman.com"]
-  s.homepage    = "http://www.osterman.com/"
+  s.homepage    = "https://github.com/osterman/copyright-header"
   s.summary     = %q{A utility to insert copyright headers into various types of source code files}
   s.description = %q{A utility which is able to recursively insert and remove copyright headers from source code files based on file extensions.}
   s.rubyforge_project = "copyright-header"
