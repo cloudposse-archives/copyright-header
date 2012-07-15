@@ -1,0 +1,61 @@
+ruby:
+  ext: ['.rb']
+  after: ['^#!']
+  comment:
+    open:   '#\n'
+    close:  '#\n'
+    prefix: '# '
+
+html:
+  ext: ['.html', '.htm', '.xhtml', '.xml']
+  comment:
+    open:   '<!--\n'
+    close:  '-->\n'
+    prefix: '    '
+
+php:
+  ext: ['.php']
+  after: [ '^#!' ]
+  comment:
+    open:   '<?php \n/*\n'
+    close:  ' */ ?>\n'
+    prefix: ' * '
+
+
+javacript:
+  ext: ['.js']
+  comment:
+    open:   '/*\n'
+    close:  ' */\n\n'
+    prefix: ' * '
+
+css:
+  ext: ['.css']
+  comment:
+    open:   '/*\n'
+    close:  ' */\n\n'
+    prefix: ' * '
+
+
+c:
+  ext: ['.java', '.c', '.cpp', '.cc']
+  comment:
+    open:   '/*'
+    close:  ' */\n\n'
+    prefix: ' * '
+
+cpp:
+  ext: ['.cpp', '.cc', '.hh', '.hpp']
+  comment:
+    open:   '//\n'
+    close:  '//\n\n'
+    prefix: '// '
+
+java:
+  ext: ['.java']
+  comment:
+    open:   '/*\n'
+    close:  ' */\n\n'
+    prefix: ' * '
+
+

@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+$:.unshift(File.expand_path('.')) # Ruby 1.9 doesn't have . in the load path...
+$:.push(File.expand_path('lib/')) 
+
+require 'rubygems'
+require 'copyright_header'
+
+command_line = CopyrightHeader::CommandLine.new
+command_line.execute
