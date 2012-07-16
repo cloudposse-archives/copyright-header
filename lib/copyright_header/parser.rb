@@ -5,12 +5,13 @@ require 'ostruct'
 
 module CopyrightHeader
   class FileNotFoundException < Exception; end
+  class ExistingLicenseException < Exception; end
 
   class License
     @lines = []
     def initialize(options)
       @options = options
-      @lines = load_template.split(/(\n)/)
+      @lines = load_template.split(/\n/).map { |line| line += "\n" }
     end
 
     def word_wrap(text, max_width = nil)
@@ -20,10 +21,10 @@ module CopyrightHeader
 
     def load_template
       if File.exists?(@options[:license_file])
-        template = ::ERB.new File.new(@options[:license_file]).read, 0, '%<'
+        template = ::ERB.new File.new(@options[:license_file]).read, 0, '%'
         license = template.result(OpenStruct.new(@options).instance_eval { binding }) 
-        license += "\n" if license !~ /\n$/s
-        word_wrap(license)
+        license = word_wrap(license)
+        license
       else
         raise FileNotFoundException.new("Unable to open #{file}")
       end
@@ -56,8 +57,7 @@ module CopyrightHeader
 
     def add(license)
       if has_copyright?
-        puts "SKIP #{@file}; detected exisiting license"
-        return nil
+        raise ExistingLicenseException.new("detected exisiting license")
       end
 
       copyright = self.format(license)
@@ -107,7 +107,7 @@ module CopyrightHeader
     end
 
     def has_copyright?(lines = 10)
-      @contents.split(/\n/)[0..lines].select { |line| line =~ /[Cc]opyright|[Ll]icense/ }.length > 0
+      @contents.split(/\n/)[0..lines].select { |line| line =~ /(?!class\s+)([Cc]opyright|[Ll]icense)\s/ }.length > 0
     end
   end
 
@@ -173,28 +173,33 @@ module CopyrightHeader
         paths << Dir.glob("#{path}/**/*")
       end
 
-      puts paths.inspect
-
       paths.flatten!
 
       paths.each do |path|
-        if File.file?(path)
-          if @exclude.include? File.basename(path)
-            puts "SKIP #{path}; excluded"
+        begin
+          if File.file?(path)
+            if @exclude.include? File.basename(path)
+              puts "SKIP #{path}; excluded"
+              next
+            end
+          else
+            puts "SKIP #{path}; not file"
             next
           end
 
-        if @syntax.supported?(path) 
-          header = @syntax.header(path)
+          if @syntax.supported?(path) 
+            header = @syntax.header(path)
             contents = header.send(method, @license)
             if contents.nil?
               puts "SKIP #{path}; failed to generate license"
             else
               write(path, contents)
             end
+          else
+            puts "SKIP #{path}; unsupported"
           end
-        else
-          puts "SKIP #{path}; unsupported"
+        rescue Exception => e
+          puts "SKIP #{path}; #{e.message}"
         end
       end
     end
