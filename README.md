@@ -36,6 +36,11 @@ Remove the header created in the previous step (without --dry-run argument):
 
     copyright-header --remove-path /tmp/test.rb --license GPL3 --dry-run
 
+Command used to generate copyright headers for this script:
+
+    bin/copyright-header  --license GPL3  --add lib/ --copyright-holder 'Erik Osterman <e@osterman.com>' --copyright-software 'Copyright Header' --copyright-software-description "A utility to manipulate copyright headers on source code files" --copyright-year 2012 --word-wrap 100 --output-dir ./
+
+
 Paths can be either files or directories. It will recursively traverse the directory tree ignoring all dot files.
 
 You can specify an alternative syntax configuration file using the --syntax argument.
