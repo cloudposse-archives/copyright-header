@@ -9,18 +9,18 @@ Features
 * Add/remove a copyright headers recursively on source files
 * Customize the syntax configuration for how to write out comments
 * Built-in support for GPL3 and MIT licenses
-* Supports custom licenes with --license-file argument
+* Supports custom licenes with `--license-file` argument
 * ERB template support
 
 Caveats
 -------
 * Will only remove headers to files that have exactly the same header as the one we added
-* Will only add headers to files which do not contain the case-sensitive pattern `/[Cc]opyright|[Lc]icense/` in the first N lines
+* Will only add headers to files which do not contain the case-sensitive pattern `/[Cc]opyright|[Lc]icense/` in the first `N` lines
 
 Requirements
 ------------
 
-* Ruby 1.9.2 (supported version)
+* Ruby 1.9.2 (supported version, might work with older rubies but not guaranteed)
 
 Installation
 ------------
