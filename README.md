@@ -43,7 +43,7 @@ Command used to generate copyright headers for this script:
 
 Paths can be either files or directories. It will recursively traverse the directory tree ignoring all dot files.
 
-You can specify an alternative syntax configuration file using the --syntax argument.
+You can specify an alternative syntax configuration file using the `--syntax` argument.
 
 
 Full list of supported arguments:

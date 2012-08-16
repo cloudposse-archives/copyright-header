@@ -38,14 +38,14 @@ css:
 
 
 c:
-  ext: ['.java', '.c', '.cpp', '.cc']
+  ext: ['.java', '.c', '.h']
   comment:
     open:   '/*'
     close:  ' */\n\n'
     prefix: ' * '
 
 cpp:
-  ext: ['.cpp', '.cc', '.hh', '.hpp']
+  ext: ['.cpp', '.hpp', '.cc', '.hh']
   comment:
     open:   '//\n'
     close:  '//\n\n'
