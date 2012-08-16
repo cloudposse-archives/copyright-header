@@ -1,9 +1,10 @@
 Copyright Header
 ===============
 
+Copyright Header is a utility to manipulate licenses on source code.
 
 Features
-------------
+--------
 
 * Add/remove a copyright headers recursively on source files
 * Customize the syntax configuration for how to write out comments
@@ -14,37 +15,23 @@ Features
 Caveats
 -------
 * Will only remove headers to files that have exactly the same header as the one we added
-* Will only add headers to files which do not contain the pattern /[Cc]opyright|[Lc]icense/ in the first N lines
-
+* Will only add headers to files which do not contain the case-sensitive pattern `/[Cc]opyright|[Lc]icense/` in the first N lines
 
 Requirements
 ------------
 
 * Ruby 1.9.2 (supported version)
 
-Installation & Usage
---------------------
+Installation
+------------
 
-    # gem install copyright-header
-    # copyright-header --help
+Install Copyright Header from RubyForge:
 
-Add a GPL3 License header to a file:
-
-    copyright-header --add-path /tmp/test.rb --license GPL3 --dry-run
-
-Remove the header created in the previous step (without --dry-run argument):
-
-    copyright-header --remove-path /tmp/test.rb --license GPL3 --dry-run
-
-Command used to generate copyright headers for this script:
-
-    copyright-header  --license GPL3  --add lib/ --copyright-holder 'Erik Osterman <e@osterman.com>' --copyright-software 'Copyright Header' --copyright-software-description "A utility to manipulate copyright headers on source code files" --copyright-year 2012 --word-wrap 100 --output-dir ./
+    gem install copyright-header
 
 
-Paths can be either files or directories. It will recursively traverse the directory tree ignoring all dot files.
-
-You can specify an alternative syntax configuration file using the `--syntax` argument.
-
+Usage
+-----
 
 Full list of supported arguments:
 
@@ -66,9 +53,55 @@ Full list of supported arguments:
         -h, --help                       Display this screen
 
 
+Examples
+--------
+
+Discover available parameters by passing the `--help` argument
+
+    copyright-header --help
+
+Add a GPL3 License header to a file:
+
+    copyright-header --add-path /tmp/test.rb --license GPL3 --dry-run
+
+Remove the header created in the previous step (without --dry-run argument):
+
+    copyright-header --remove-path /tmp/test.rb --license GPL3 --dry-run
+
+Command used to generate copyright headers for this script:
+
+    copyright-header  --license GPL3  \
+                      --add lib/ \
+                      --copyright-holder 'Erik Osterman <e@osterman.com>' \
+                      --copyright-software 'Copyright Header' \
+                      --copyright-software-description "A utility to manipulate copyright headers on source code files" \
+                      --copyright-year 2012 \
+                      --word-wrap 100 \
+                      --output-dir ./
+
+
+Paths can be either files or directories. It will recursively traverse the directory tree ignoring all dot files.
+
+You can specify an alternative syntax configuration file using the `--syntax` argument.
+
+Contributors
+------------
+
+<https://github.com/osterman/copyright-header/graphs/contributors>
+    
+Contributing
+------------
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
 Contact Information
 -------------------
 
-Erik Osterman <e@osterman.com>
-http://www.osterman.com/
+Author: Erik Osterman  
+E-mail: <e@osterman.com>  
+Homepage: <http://www.osterman.com/>  
 
