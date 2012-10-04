@@ -58,4 +58,16 @@ java:
     close:  ' */\n\n'
     prefix: ' * '
 
+haml:
+  ext: ['.haml']
+  comment:
+    open:   '-#\n'
+    close:  '-#\n'
+    prefix: '-# '
 
+coffee:
+  ext: ['.coffee']
+  comment:
+    open:   '###\n'
+    close:  '###\n'
+    prefix: ''
