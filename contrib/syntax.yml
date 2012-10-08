@@ -6,6 +6,14 @@ ruby:
     close:  '#\n'
     prefix: '# '
 
+python:
+  ext: ['.py']
+  after: ['^#!', '^#.*coding']
+  comment:
+    open:   '\n'
+    close:  '\n'
+    prefix: '# '
+
 html:
   ext: ['.html', '.htm', '.xhtml', '.xml']
   comment:
