@@ -53,7 +53,7 @@ module CopyrightHeader
       comment_open ||= ''
       comment_close ||= ''
       comment_prefix ||= ''
-      license = comment_open + @lines.map { |line| comment_prefix + line }.join() + comment_close
+      license = comment_open + @lines.map { |line| (comment_prefix + line).gsub(/\s+\n$/, "\n") }.join() + comment_close
       license.gsub!(/\\n/, "\n")
       license
     end
