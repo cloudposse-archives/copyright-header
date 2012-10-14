@@ -164,7 +164,7 @@ module CopyrightHeader
     @license = nil
     def initialize(options = {})
       @options = options
-    @exclude = [ /^LICENSE(|\.txt)$/i, /^holders(|\.txt)$/i, /^README/, /^\./]
+      @exclude = [ /^LICENSE(|\.txt)$/i, /^holders(|\.txt)$/i, /^README/, /^\./]
       @license = License.new(:license_file => @options[:license_file],
                              :copyright_software => @options[:copyright_software],
                              :copyright_software_description => @options[:copyright_software_description],
