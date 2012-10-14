@@ -38,7 +38,7 @@ css:
 
 
 c:
-  ext: ['.java', '.c', '.h']
+  ext: ['.c', '.h']
   comment:
     open:   '/*'
     close:  ' */\n\n'
