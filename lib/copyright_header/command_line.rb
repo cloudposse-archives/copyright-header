@@ -27,11 +27,11 @@ module CopyrightHeader
     def initialize(options = {})
       begin
         @options = options
-        @options[:base_path] = File.expand_path File.dirname(__FILE__) + "/../../"
+        @options[:base_path] ||= File.expand_path File.dirname(__FILE__) + "/../../"
         @optparse = OptionParser.new do |opts|
           opts.banner = "Usage: #{$0} options [file]"
           
-          @options[:dry_run] = false
+          @options[:dry_run] ||= false
           opts.on( '-n', '--dry-run', 'Output the parsed files to STDOUT' ) do
             @options[:dry_run] = true
           end
@@ -46,7 +46,6 @@ module CopyrightHeader
 
           opts.on( '--license [' + Dir.glob(@options[:base_path] + '/licenses/*').map { |f| File.basename(f, '.erb') }.join('|') + ']', 'Use LICENSE as header' ) do|license|
             @options[:license] = license
-            @options[:license_file] = @options[:base_path] + '/licenses/' + license + '.erb'
           end
 
           opts.on( '--copyright-software NAME', 'The common name for this piece of software (e.g. "Copyright Header")' ) do|name|
@@ -57,17 +56,17 @@ module CopyrightHeader
             @options[:copyright_software_description] = desc
           end
 
-          @options[:copyright_holders] = []
+          @options[:copyright_holders] ||= []
           opts.on( '--copyright-holder NAME', 'The common name for this piece of software (e.g. "Erik Osterman <e@osterman.com>"). Repeat argument for multiple names.' ) do|name|
             @options[:copyright_holders] << name
           end
 
-          @options[:copyright_years] = []
+          @options[:copyright_years] ||= []
           opts.on( '--copyright-year YEAR', 'The common name for this piece of software (e.g. "2012"). Repeat argument for multiple years.' ) do|year|
             @options[:copyright_years] << year
           end
 
-          @options[:word_wrap] = 80
+          @options[:word_wrap] ||= 80
           opts.on( '-w', '--word-wrap LEN', 'Maximum number of characters per line for license (default: 80)' ) do |len|
             @options[:word_wrap] = len.to_i
           end
@@ -80,7 +79,7 @@ module CopyrightHeader
             @options[:remove_path] = path
           end
 
-          @options[:syntax] = @options[:base_path] + '/contrib/syntax.yml'
+          @options[:syntax] ||= @options[:base_path] + '/contrib/syntax.yml'
           opts.on( '-c', '--syntax FILE', 'Syntax configuration file' ) do |path|
             @options[:syntax] = path
           end
@@ -101,6 +100,10 @@ module CopyrightHeader
         end
 
         @optparse.parse!
+
+        # get the license_file from the shiped files
+        @options[:license_file] ||= @options[:base_path] + '/licenses/' + @options[:license] + '.erb'
+
         unless @options.has_key?(:license_file)
           raise MissingArgumentException.new("Missing --license or --license-file argument")
         end
