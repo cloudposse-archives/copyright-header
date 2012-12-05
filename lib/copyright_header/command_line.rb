@@ -71,11 +71,11 @@ module CopyrightHeader
             @options[:word_wrap] = len.to_i
           end
 
-          opts.on( '-a', '--add-path PATH', 'Recursively insert header in all files found in path' ) do |path|
+          opts.on( '-a', '--add-path PATH', 'Recursively insert header in all files found in path (allows multiple pathes separated by platform path-separator)' ) do |path|
             @options[:add_path] = path
           end
 
-          opts.on( '-r', '--remove-path PATH', 'Recursively remove header in all files found in path' ) do |path|
+          opts.on( '-r', '--remove-path PATH', 'Recursively remove header in all files found in path (allows multiple pathes separated by platform path-separator)' ) do |path|
             @options[:remove_path] = path
           end
 
