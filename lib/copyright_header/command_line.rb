@@ -41,7 +41,7 @@ module CopyrightHeader
             @options[:output_dir] = dir + '/'
           end
           
-          opts.on( '--license-file FILE', 'Use FILE as header' ) do|file|
+          opts.on( '--license-file FILE', 'Use FILE as header (instead of using --license argument)' ) do|file|
             @options[:license_file] = file
           end
 
