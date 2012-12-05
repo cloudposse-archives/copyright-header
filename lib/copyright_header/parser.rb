@@ -176,11 +176,11 @@ module CopyrightHeader
 
     def execute
       if @options.has_key?(:add_path)
-        add(@options[:add_path])
+        @options[:add_path].split(File::PATH_SEPARATOR).each { |path| add(path) }
       end
 
       if @options.has_key?(:remove_path)
-        remove(@options[:remove_path])
+        @options[:add_path].split(File::PATH_SEPARATOR).each { |path| remove(path) }
       end
     end
 
