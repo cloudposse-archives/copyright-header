@@ -21,6 +21,7 @@ require 'optparse'
 
 module CopyrightHeader
   class MissingArgumentException < Exception; end
+  class AmbiguousArgumentException < Exception; end
 
   class CommandLine
     attr_accessor :options, :parser, :optparse
@@ -101,8 +102,13 @@ module CopyrightHeader
 
         @optparse.parse!
 
-        # get the license_file from the shiped files
-        @options[:license_file] ||= @options[:base_path] + '/licenses/' + @options[:license] + '.erb'
+        unless @options[:license].nil?
+          unless @options[:license_file].nil?
+            raise AmbiguousArgumentException.new("Cannot pass both --license and --license-file arguments")
+          end
+          # get the license_file from the shiped files
+          @options[:license_file] ||= @options[:base_path] + '/licenses/' + @options[:license] + '.erb'
+        end
 
         unless @options.has_key?(:license_file)
           raise MissingArgumentException.new("Missing --license or --license-file argument")
