@@ -84,6 +84,30 @@ Paths can be either files or directories. It will recursively traverse the direc
 
 You can specify an alternative syntax configuration file using the `--syntax` argument.
 
+Rake
+----
+
+the above example as rake task inside a Rakefile:
+
+    task :headers do
+      require 'rubygems'
+      require 'copyright_header'
+
+      args = {
+        :license => 'GPL3',
+        :copyright_software => 'Copyright Header',
+        :copyright_software_description => "A utility to manipulate copyright headers on source code files",
+        :copyright_holders => ['Erik Osterman <e@osterman.com>'],
+        :copyright_years => ['2012'],
+        :add_path => 'lib',
+        :output_dir => '.'
+      }
+
+      command_line = CopyrightHeader::CommandLine.new( args )
+      command_line.execute
+    end
+
+
 Contributors
 ------------
 
