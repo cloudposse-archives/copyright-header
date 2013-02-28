@@ -180,7 +180,7 @@ module CopyrightHeader
       end
 
       if @options.has_key?(:remove_path)
-        @options[:add_path].split(File::PATH_SEPARATOR).each { |path| remove(path) }
+        @options[:remove_path].split(File::PATH_SEPARATOR).each { |path| remove(path) }
       end
     end
 
