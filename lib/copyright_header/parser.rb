@@ -76,7 +76,7 @@ module CopyrightHeader
 
     def add(license)
       if has_copyright?
-        raise ExistingLicenseException.new("detected exisiting license")
+        raise ExistingLicenseException.new("detected existing license")
       end
 
       copyright = self.format(license)
