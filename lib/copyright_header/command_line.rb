@@ -80,7 +80,7 @@ module CopyrightHeader
             @options[:remove_path] = path
           end
 
-          @options[:guess_extension] = false
+          @options[:guess_extension] ||= false
           opts.on( '-g', '--guess-extension', 'Use the GitHub Linguist gem to guess the extension of the source code when no extension can be determined (experimental).' ) do 
             @options[:guess_extension] = true
           end
