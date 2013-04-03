@@ -72,12 +72,17 @@ module CopyrightHeader
             @options[:word_wrap] = len.to_i
           end
 
-          opts.on( '-a', '--add-path PATH', 'Recursively insert header in all files found in path (allows multiple pathes separated by platform path-separator)' ) do |path|
+          opts.on( '-a', '--add-path PATH', 'Recursively insert header in all files found in path (allows multiple paths separated by platform path-separator "' + File::PATH_SEPARATOR + '")' ) do |path|
             @options[:add_path] = path
           end
 
-          opts.on( '-r', '--remove-path PATH', 'Recursively remove header in all files found in path (allows multiple pathes separated by platform path-separator)' ) do |path|
+          opts.on( '-r', '--remove-path PATH', 'Recursively remove header in all files found in path (allows multiple paths separated by platform path-separator "' + File::PATH_SEPARATOR + '")' ) do |path|
             @options[:remove_path] = path
+          end
+
+          @options[:guess_extension] = false
+          opts.on( '-g', '--guess-extension', 'Use the GitHub Linguist gem to guess the extension of the source code when no extension can be determined (experimental).' ) do 
+            @options[:guess_extension] = true
           end
 
           @options[:syntax] ||= @options[:base_path] + '/contrib/syntax.yml'

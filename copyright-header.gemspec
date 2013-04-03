@@ -19,4 +19,5 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.extra_rdoc_files = ['README.md', 'LICENSE', 'AUTHORS', 'contrib/syntax.yml' ]
   s.require_paths = ["lib"]
+  s.add_dependency('github-linguist', '~> 2.6.7')
 end

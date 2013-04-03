@@ -21,6 +21,7 @@ require 'fileutils'
 require 'yaml'
 require 'erb'
 require 'ostruct'
+require 'linguist'
 
 module CopyrightHeader
   class FileNotFoundException < Exception; end
@@ -131,7 +132,10 @@ module CopyrightHeader
   end
 
   class Syntax
-    def initialize(config)
+    attr_accessor :guess_extension
+
+    def initialize(config, guess_extension = false)
+      @guess_extension = guess_extension
       @config = {}
       syntax = YAML.load_file(config)
       syntax.each_value do |format|
@@ -146,7 +150,11 @@ module CopyrightHeader
     end
 
     def ext(file)
-      File.extname(file)
+      extension = File.extname(file)
+      if @guess_extension && (extension.nil? || extension.empty?)
+        extension = Linguist::FileBlob.new(file).language.primary_extension 
+      end
+      return extension
     end
 
     def supported?(file)
@@ -171,7 +179,7 @@ module CopyrightHeader
                              :copyright_years => @options[:copyright_years],
                              :copyright_holders => @options[:copyright_holders],
                              :word_wrap => @options[:word_wrap])
-      @syntax = Syntax.new(@options[:syntax])
+      @syntax = Syntax.new(@options[:syntax], @options[:guess_extension])
     end
 
     def execute
