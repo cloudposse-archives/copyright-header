@@ -73,7 +73,7 @@ Remove the header created in the previous step (without --dry-run argument):
 Command used to generate copyright headers for this script:
 
     copyright-header  --license GPL3  \
-                      --add-path lib/ \
+                      --add-path lib/:bin/ \
                       --copyright-holder 'Erik Osterman <e@osterman.com>' \
                       --copyright-software 'Copyright Header' \
                       --copyright-software-description "A utility to manipulate copyright headers on source code files" \
