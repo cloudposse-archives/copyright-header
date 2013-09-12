@@ -23,7 +23,7 @@ python:
     prefix: '# '
 
 html:
-  ext: ['.html', '.htm', '.xhtml', '.xml']
+  ext: ['.html', '.htm', '.xhtml']
   comment:
     open:   '<!--\n'
     close:  '-->\n'
@@ -87,3 +87,38 @@ coffee:
     open:   '###\n'
     close:  '###\n'
     prefix: ''
+
+# M4 macro language, use #, not dnl
+m4:
+  ext:  ['.m4']
+  comment:
+    open:   '#\n'
+    close:  '#\n'
+    prefix: '# '
+
+# Most shells, really
+shell:
+  ext:  ['.sh']
+  after: ['^#!']
+  comment:
+    open:   '#\n'
+    close:  '#\n'
+    prefix: '# '
+
+# Use "-- " to make sure e.g. MySQL understands it
+sql:
+  ext:  ['.sql']
+  comment:
+    open:   '-- \n'
+    close:  '-- \n'
+    prefix: '-- '
+
+# XML is *not* the same as HTML, and the comments need to go after a
+# preprocessing directive, if present.
+xml:
+  ext: ['.xml', '.xsd']
+  after: ['^<\?']
+  comment:
+    open:   '<!--\n'
+    close:  '-->\n'
+    prefix: '    '
