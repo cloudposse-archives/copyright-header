@@ -1,6 +1,6 @@
 ruby:
   ext: ['.rb']
-  after: ['^#!']
+  after: ['^#!', '^#.*encoding:']
   comment:
     open:   '#\n'
     close:  '#\n'
@@ -8,15 +8,20 @@ ruby:
 
 perl:
   ext: ['.pl']
-  after: ['^#!']
+  after: ['^#!', '^#.*encoding:']
   comment:
     open:   '#\n'
     close:  '#\n'
     prefix: '# '
 
+
+# Support PEP 0263 comments:
+# coding=<encoding name>
+# -*- coding: <encoding name> -*-
+# vim: set fileencoding=<encoding name> :
 python:
   ext: ['.py']
-  after: ['^#!', '^#.*coding']
+  after: ['^#!', '^#.*coding:', '^#.*coding=', '^#.*fileencoding=']
   comment:
     open:   '\n'
     close:  '\n'
@@ -115,6 +120,7 @@ sql:
 
 # XML is *not* the same as HTML, and the comments need to go after a
 # preprocessing directive, if present.
+# FIXME: only supports single line directives
 xml:
   ext: ['.xml', '.xsd']
   after: ['^<\?']
