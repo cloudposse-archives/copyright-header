@@ -137,8 +137,7 @@ yaml:
     close:  '#\n'
     prefix: '# '
  
- 
-actionscript:
+ActionScript:
   ext: ['.as']
   comment:
     open:   '//\n'
