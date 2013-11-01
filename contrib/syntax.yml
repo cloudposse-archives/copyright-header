@@ -129,6 +129,14 @@ xml:
     close:  '-->\n'
     prefix: '    '
 
+yaml:
+  ext:  ['.yml', '.yaml']
+  after: ['^#!']
+  comment:
+    open:   '#\n'
+    close:  '#\n'
+    prefix: '# '
+  
 actionScript:
   ext: ['.as']
   comment:
