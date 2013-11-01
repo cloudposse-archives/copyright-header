@@ -80,7 +80,7 @@ java:
     prefix: ' * '
 
 haml:
-  ext: ['.haml']
+  ext: ['.haml', '.hamlc']
   comment:
     open:   '-#\n'
     close:  '-#\n'
