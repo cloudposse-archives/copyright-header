@@ -1,5 +1,5 @@
 ruby:
-  ext: ['.rb']
+  ext: ['.rb', '.rake']
   after: ['^#!', '^#.*encoding:']
   comment:
     open:   '#\n'
@@ -128,3 +128,11 @@ xml:
     open:   '<!--\n'
     close:  '-->\n'
     prefix: '    '
+
+actionScript:
+  ext: ['.as']
+  comment:
+    open:   '//\n'
+    close:  '//\n\n'
+    prefix: '// '
+  
