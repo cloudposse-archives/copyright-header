@@ -131,7 +131,6 @@ xml:
 
 yaml:
   ext:  ['.yml', '.yaml']
-  after: ['^#!']
   comment:
     open:   '#\n'
     close:  '#\n'
