@@ -14,7 +14,6 @@ perl:
     close:  '#\n'
     prefix: '# '
 
-
 # Support PEP 0263 comments:
 # coding=<encoding name>
 # -*- coding: <encoding name> -*-
@@ -42,7 +41,6 @@ php:
     close:  ' */ ?>\n'
     prefix: ' * '
 
-
 javacript:
   ext: ['.js']
   comment:
@@ -56,7 +54,6 @@ css:
     open:   '/*\n'
     close:  ' */\n\n'
     prefix: ' * '
-
 
 c:
   ext: ['.c', '.h']
