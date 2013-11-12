@@ -1,5 +1,5 @@
 ruby:
-  ext: ['.rb']
+  ext: ['.rb', '.rake']
   after: ['^#!', '^#.*encoding:']
   comment:
     open:   '#\n'
@@ -80,7 +80,7 @@ java:
     prefix: ' * '
 
 haml:
-  ext: ['.haml']
+  ext: ['.haml', '.hamlc']
   comment:
     open:   '-#\n'
     close:  '-#\n'
@@ -122,9 +122,25 @@ sql:
 # preprocessing directive, if present.
 # FIXME: only supports single line directives
 xml:
-  ext: ['.xml', '.xsd']
+  ext: ['.xml', '.xsd', '.mxml']
   after: ['^<\?']
   comment:
     open:   '<!--\n'
     close:  '-->\n'
     prefix: '    '
+
+yaml:
+  ext:  ['.yml', '.yaml']
+  after: ['^#!']
+  comment:
+    open:   '#\n'
+    close:  '#\n'
+    prefix: '# '
+ 
+ActionScript:
+  ext: ['.as']
+  comment:
+    open:   '//\n'
+    close:  '//\n\n'
+    prefix: '// '
+  
