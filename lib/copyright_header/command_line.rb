@@ -38,7 +38,7 @@ module CopyrightHeader
           end
           
           opts.on( '-o', '--output-dir DIR', 'Use DIR as output directory') do |dir|
-            @options[:output_dir] = dir + '/'
+            @options[:output_dir] = dir.gsub(/\/+$/, '')
           end
           
           opts.on( '--license-file FILE', 'Use FILE as header (instead of using --license argument)' ) do|file|
@@ -53,17 +53,17 @@ module CopyrightHeader
             @options[:copyright_software] = name
           end
 
-          opts.on( '--copyright-software-description DESC', 'The common name for this piece of software (e.g. "A utility to manipulate copyright headers on source code files")' ) do|desc|
+          opts.on( '--copyright-software-description DESC', 'The detailed description for this piece of software (e.g. "A utility to manipulate copyright headers on source code files")' ) do|desc|
             @options[:copyright_software_description] = desc
           end
 
           @options[:copyright_holders] ||= []
-          opts.on( '--copyright-holder NAME', 'The common name for this piece of software (e.g. "Erik Osterman <e@osterman.com>"). Repeat argument for multiple names.' ) do|name|
+          opts.on( '--copyright-holder NAME', 'The legal owner of the copyright for the software. (e.g. "Erik Osterman <e@osterman.com>"). Repeat argument for multiple names.' ) do|name|
             @options[:copyright_holders] << name
           end
 
           @options[:copyright_years] ||= []
-          opts.on( '--copyright-year YEAR', 'The common name for this piece of software (e.g. "2012"). Repeat argument for multiple years.' ) do|year|
+          opts.on( '--copyright-year YEAR', 'The years for which the copyright exists (e.g. "2012"). Repeat argument for multiple years.' ) do|year|
             @options[:copyright_years] << year
           end
 
@@ -91,11 +91,11 @@ module CopyrightHeader
           end
 
           opts.on( '-V', '--version', 'Display version information' ) do
-            puts "CopyrightHeader #{CopyrightHeader::VERSION}"
-            puts "Copyright (C) 2012 Erik Osterman <e@osterman.com>"
-            puts "License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>"
-            puts "This is free software: you are free to change and redistribute it."
-            puts "There is NO WARRANTY, to the extent permitted by law."
+            STDERR.puts "CopyrightHeader #{CopyrightHeader::VERSION}",
+                        "Copyright (C) 2012 Erik Osterman <e@osterman.com>",
+                        "License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>",
+                        "This is free software: you are free to change and redistribute it.", 
+                        "There is NO WARRANTY, to the extent permitted by law."
             exit
           end
 
@@ -130,13 +130,13 @@ module CopyrightHeader
           raise MissingArgumentException.new("Missing --copyright-year argument") unless @options[:copyright_years].length > 0
         end
       rescue MissingArgumentException => e
-        puts e.message
-        puts @optparse
+        STDERR.puts e.message, @optparse
         exit (1)
       end
     end 
 
     def execute
+      STDERR.puts "-- DRY RUN --" if @options[:dry_run]
       @parser = CopyrightHeader::Parser.new(@options)
       @parser.execute
     end

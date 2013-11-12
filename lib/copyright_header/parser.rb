@@ -82,7 +82,7 @@ module CopyrightHeader
 
       copyright = self.format(license)
       if copyright.nil?
-        puts "Copyright is nil"
+        STDERR.puts "Copyright is nil"
         return nil
       end
 
@@ -121,7 +121,7 @@ module CopyrightHeader
         @contents.gsub!(/#{Regexp.escape(text)}/, '')
         @contents
       else
-        puts "SKIP #{@file}; copyright not detected"
+        STDERR.puts "SKIP #{@file}; copyright not detected"
         return nil
       end
     end
@@ -206,11 +206,11 @@ module CopyrightHeader
         begin
           if File.file?(path)
             if @exclude.include? File.basename(path)
-              puts "SKIP #{path}; excluded"
+              STDERR.puts "SKIP #{path}; excluded"
               next
             end
           else
-            puts "SKIP #{path}; not file"
+            STDERR.puts "SKIP #{path}; not file"
             next
           end
 
@@ -218,15 +218,15 @@ module CopyrightHeader
             header = @syntax.header(path)
             contents = header.send(method, @license)
             if contents.nil?
-              puts "SKIP #{path}; failed to generate license"
+              STDERR.puts "SKIP #{path}; failed to generate license"
             else
               write(path, contents)
             end
           else
-            puts "SKIP #{path}; unsupported"
+            STDERR.puts "SKIP #{path}; unsupported"
           end
         rescue Exception => e
-          puts "SKIP #{path}; #{e.message}"
+          STDERR.puts "SKIP #{path}; #{e.message}"
         end
       end
     end
@@ -242,11 +242,15 @@ module CopyrightHeader
     end
 
     def write(file, contents)
-      puts "UPDATE #{file}"
-      if @options[:dry_run] || @options[:output_dir].nil?
-        puts contents
+      if @options[:dry_run] 
+        STDERR.puts "UPDATE #{file} [dry-run]"
+        STDERR.puts contents
+      elsif @options[:output_dir].nil?
+        STDERR.puts "UPDATE #{file} [no output-dir]"
+        STDERR.puts contents
       else
-        dir = "#{@options[:output_dir]}/#{File.dirname(file)}"
+        dir = "#{@options[:output_dir]}/#{File.dirname(file).gsub(/^\/+/, '')}"
+        STDERR.puts "UPDATE #{file} [output-dir #{dir}]"
         FileUtils.mkpath dir unless File.directory?(dir)
         output_path = @options[:output_dir] + file
         f =File.new(output_path, 'w')
