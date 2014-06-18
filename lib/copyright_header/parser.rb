@@ -252,7 +252,7 @@ module CopyrightHeader
         dir = "#{@options[:output_dir]}/#{File.dirname(file).gsub(/^\/+/, '')}"
         STDERR.puts "UPDATE #{file} [output-dir #{dir}]"
         FileUtils.mkpath dir unless File.directory?(dir)
-        output_path = @options[:output_dir] + file
+        output_path = @options[:output_dir] + "/" + file
         f =File.new(output_path, 'w')
         f.write(contents)
         f.close
