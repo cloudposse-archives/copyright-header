@@ -139,4 +139,10 @@ action_script:
     open:   '//\n'
     close:  '//\n\n'
     prefix: '// '
-  
+
+sass:
+  ext: ['.sass', '.scss']
+  comment:
+    open:   '/*\n'
+    close:  ' */\n\n'
+    prefix: ' * '
