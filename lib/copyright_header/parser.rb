@@ -209,6 +209,8 @@ module CopyrightHeader
               STDERR.puts "SKIP #{path}; excluded"
               next
             end
+          elsif File.directory?(path)
+            next
           else
             STDERR.puts "SKIP #{path}; not file"
             next
