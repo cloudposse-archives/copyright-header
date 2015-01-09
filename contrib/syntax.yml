@@ -76,6 +76,13 @@ java:
     close:  ' */\n\n'
     prefix: ' * '
 
+groovy:
+  ext: ['.groovy']
+  comment:
+    open:   '/*\n'
+    close:  ' */\n\n'
+    prefix: ' * '
+
 haml:
   ext: ['.haml', '.hamlc']
   comment:
