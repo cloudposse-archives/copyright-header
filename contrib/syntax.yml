@@ -139,7 +139,7 @@ yaml:
     open:   '#\n'
     close:  '#\n'
     prefix: '# '
- 
+
 action_script:
   ext: ['.as']
   comment:
@@ -153,3 +153,17 @@ sass:
     open:   '/*\n'
     close:  ' */\n\n'
     prefix: ' * '
+
+verilog:
+  ext: ['.v']
+  comment:
+    open:   '//\n'
+    close:  '//\n\n'
+    prefix: '// '
+
+vhdl:
+  ext: ['.vhd']
+  comment:
+    open:   '--\n'
+    close:  '--\n\n'
+    prefix: '-- '
