@@ -155,7 +155,7 @@ sass:
     prefix: ' * '
 
 verilog:
-  ext: ['.v']
+  ext: ['.v', '.sv']
   comment:
     open:   '//\n'
     close:  '//\n\n'
