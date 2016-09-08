@@ -18,5 +18,5 @@
 # along with Copyright Header.  If not, see <http://www.gnu.org/licenses/>.
 #
 module CopyrightHeader
-  VERSION = "1.0.16"
+  VERSION = "1.0.17"
 end
