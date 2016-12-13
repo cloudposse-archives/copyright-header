@@ -1,19 +1,19 @@
 #
 # Copyright Header - A utility to manipulate copyright headers on source code files
-# Copyright (C) 2012 Erik Osterman <e@osterman.com>
-# 
+# Copyright (C) 2012-2016 Erik Osterman <e@osterman.com>
+#
 # This file is part of Copyright Header.
-# 
+#
 # Copyright Header is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
-# 
+#
 # Copyright Header is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with Copyright Header.  If not, see <http://www.gnu.org/licenses/>.
 #
@@ -118,7 +118,10 @@ module CopyrightHeader
     def remove(license)
       if has_copyright?
         text = self.format(license)
-        @contents.gsub!(/#{Regexp.escape(text)}/, '')
+        # Due to editors messing with whitespace, we'll make this more of a fuzzy match and use \s to match whitespace
+        pattern = Regexp.escape(text).gsub(/\\[ n]/, '\s*').gsub(/\\s*$/, '\s')
+        exp = Regexp.new(pattern)
+        @contents.gsub!(exp, '')
         @contents
       else
         STDERR.puts "SKIP #{@file}; copyright not detected"
