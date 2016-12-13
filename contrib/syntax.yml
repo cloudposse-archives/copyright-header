@@ -76,6 +76,13 @@ java:
     close:  ' */\n\n'
     prefix: ' * '
 
+golang:
+  ext: ['.go']
+  comment:
+    open:   '/*\n'
+    close:  ' */\n\n'
+    prefix: ' * '
+
 groovy:
   ext: ['.groovy']
   comment:
