@@ -12,4 +12,8 @@ RUN gem build copyright-header.gemspec && \
     gem install copyright-header-*.gem && \
     rm -rf /tmp/copyright-header
 
+VOLUME ["/usr/src"]
+
+WORKDIR /usr/src
+
 ENTRYPOINT ["/usr/local/bin/copyright-header"]
