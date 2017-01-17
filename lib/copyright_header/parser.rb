@@ -89,7 +89,7 @@ module CopyrightHeader
       text = ""
       if @config.has_key?(:after) && @config[:after].instance_of?(Array)
         copyright_written = false
-        lines = @contents.split(/\n/)
+        lines = @contents.split(/\n/, -1)
         head = lines.shift(10)
         while(head.size > 0)
           line = head.shift
@@ -155,7 +155,7 @@ module CopyrightHeader
     def ext(file)
       extension = File.extname(file)
       if @guess_extension && (extension.nil? || extension.empty?)
-        extension = Linguist::FileBlob.new(file).language.primary_extension 
+        extension = Linguist::FileBlob.new(file).language.extensions.first
       end
       return extension
     end
@@ -208,7 +208,7 @@ module CopyrightHeader
       paths.each do |path|
         begin
           if File.file?(path)
-            if @exclude.include? File.basename(path)
+            if File.basename(path).match(Regexp.union(@exclude))
               STDERR.puts "SKIP #{path}; excluded"
               next
             end
