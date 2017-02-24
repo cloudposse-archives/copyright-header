@@ -46,7 +46,7 @@ Full list of supported arguments:
             --copyright-software-description DESC
                                          The detailed description for this piece of software (e.g. "A utility to manipulate copyright headers on source code files")
             --copyright-holder NAME      The legal owner of the copyright for the software. (e.g. "Erik Osterman <e@osterman.com>"). Repeat argument for multiple names.
-            --copyright-year YEAR        The years for which the copyright exists (e.g. "2017"). Repeat argument for multiple years.
+            --copyright-year YEAR        The years for which the copyright exists (e.g. "2012-2017"). Repeat argument for multiple years.
         -w, --word-wrap LEN              Maximum number of characters per line for license (default: 80)
         -a, --add-path PATH              Recursively insert header in all files found in path (allows multiple paths separated by platform path-separator ":")
         -r, --remove-path PATH           Recursively remove header in all files found in path (allows multiple paths separated by platform path-separator ":")
@@ -69,7 +69,7 @@ Add a GPL3 License header to a file:
                      --copyright-holder 'Joe Shmoe' \
                      --copyright-software 'Example Software' \
                      --copyright-software-description "This is the description of the software." \
-                     --copyright-year 2017 \
+                     --copyright-year 2012-2017 \
                      --output-dir /tmp \
                      --dry-run 
 
@@ -80,7 +80,7 @@ Remove the header created in the previous step (without --dry-run argument):
                      --copyright-holder 'Joe Shmoe' \
                      --copyright-software 'Example Software' \
                      --copyright-software-description 'This is the description of the software.' \
-                     --copyright-year 2017 \
+                     --copyright-year 2012-2017 \
                      --output-dir /tmp \
                      --dry-run 
 
@@ -92,7 +92,7 @@ Command used to generate copyright headers for this script:
                       --copyright-holder 'Erik Osterman <e@osterman.com>' \
                       --copyright-software 'Copyright Header' \
                       --copyright-software-description "A utility to manipulate copyright headers on source code files" \
-                      --copyright-year 2017 \
+                      --copyright-year 2012-2017 \
                       --word-wrap 100 \
                       --output-dir ./
 
@@ -115,7 +115,7 @@ The above example can be performed as rake task inside a Rakefile:
         :copyright_software => 'Copyright Header',
         :copyright_software_description => "A utility to manipulate copyright headers on source code files",
         :copyright_holders => ['Erik Osterman <e@osterman.com>'],
-        :copyright_years => ['2017'],
+        :copyright_years => ['2012-2017'],
         :add_path => 'lib',
         :output_dir => '.'
       }
@@ -134,14 +134,14 @@ docker run --rm --volume `pwd`:/usr/src/ osterman/copyright-header:latest \
   --copyright-holder 'Erik Osteman <e@osterman.com>' \
   --copyright-software 'Copyright Header' \
   --copyright-software-description 'A utility to manipulate copyright headers on source code files' \
-  --copyright-year 2017 \
+  --copyright-year 2012-2017 \
   --word-wrap 100 \
   --output-dir /usr/src/
 ```
 
 ## Make
 
-You can add a stub to your [`Makefile`](https://raw.githubusercontent.com/cloudposse/build-harness/master/modules/docs/Makefile.copyright). 
+Here is how we typically use it in our [`Makefile`](Makefile). 
 
 Check out the Cloud Posse [`build-harness`](https://github.com/cloudposse/build-harness/) for other neat tricks.
 
