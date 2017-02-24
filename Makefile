@@ -37,5 +37,5 @@ add-copyright:
 bump:
 	gem bump
 
-release: bump
+release:
 	rake release
