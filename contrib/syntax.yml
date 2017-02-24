@@ -174,3 +174,10 @@ vhdl:
     open:   '--\n'
     close:  '--\n\n'
     prefix: '-- '
+
+elm:
+  ext: ['.elm']
+  comment:
+    open: '{-\n'
+    close: '-}\n\n'
+    prefix: '  '
