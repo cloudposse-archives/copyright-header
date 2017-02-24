@@ -127,7 +127,7 @@ The above example can be performed as rake task inside a Rakefile:
 ## Docker
 
 ```
-docker run --rm --volume `pwd`:/usr/src/ osterman/copyright-header:latest
+docker run --rm --volume `pwd`:/usr/src/ osterman/copyright-header:latest \
   --license GPL3 \
   --add-path . \
   --guess-extension \
