@@ -61,7 +61,7 @@ php:
     prefix: ' * '
 
 javacript:
-  ext: ['.js']
+  ext: ['.js', '.jsx']
   comment:
     open:   '/*\n'
     close:  ' */\n\n'
