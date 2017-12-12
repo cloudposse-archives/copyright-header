@@ -200,3 +200,10 @@ elm:
     open: '{-\n'
     close: '-}\n\n'
     prefix: '  '
+
+swift:
+  ext: ['.swift']
+  comment:
+    open:   '/*\n'
+    close:  ' */\n\n'
+    prefix: ' * '
