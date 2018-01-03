@@ -67,6 +67,13 @@ javacript:
     close:  ' */\n\n'
     prefix: ' * '
 
+qml:
+  ext: ['.qml']
+  comment:
+    open:   '/*\n'
+    close:  ' */\n\n'
+    prefix: ' * '
+
 css:
   ext: ['.css']
   comment:
