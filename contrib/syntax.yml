@@ -74,6 +74,13 @@ qml:
     close:  ' */\n\n'
     prefix: ' * '
 
+qmake_project:
+  ext: ['.pro']
+  comment:
+    open:   '#\n'
+    close:  '#\n'
+    prefix: '# '
+
 css:
   ext: ['.css']
   comment:
