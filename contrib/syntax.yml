@@ -207,3 +207,11 @@ swift:
     open:   '/*\n'
     close:  ' */\n\n'
     prefix: ' * '
+
+rust:
+  ext: ['.rs']
+  comment:
+    open: '/*\n'
+    close: ' */\n\n'
+    prefix: ' * '
+
