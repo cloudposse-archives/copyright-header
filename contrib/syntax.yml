@@ -19,9 +19,9 @@
 #
 ruby:
   ext: ['.rb', '.rake']
-  after: ['^#!', '^#.*encoding:']
+  after: ['^#!', '^#.*encoding:', '^#.*frozen_string_literal:']
   comment:
-    open:   '#\n'
+    open:   '\n#\n'
     close:  '#\n'
     prefix: '# '
 
