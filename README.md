@@ -162,17 +162,6 @@ Check out the Cloud Posse [`build-harness`](https://github.com/cloudposse/build-
 
 
 
-## Makefile Targets
-```
-Available targets:
-
-  help                                This help screen
-  help/all                            Display help for all targets
-  lint                                Lint terraform code
-
-```
-
-
 
 ## Help
 
