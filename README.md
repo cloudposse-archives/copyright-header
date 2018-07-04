@@ -2,7 +2,7 @@
 
 [![Cloud Posse](https://cloudposse.com/logo-300x69.png)](https://cloudposse.com)
 
-# copyright-header  [![Build Status](https://travis-ci.org/cloudposse/copyright-header.svg?branch=master)](https://travis-ci.org/cloudposse/copyright-header) [![Latest Release](https://img.shields.io/github/release/cloudposse/copyright-header.svg)](https://github.com/cloudposse/copyright-header/releases) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
+# copyright-header [![Build Status](https://travis-ci.org/cloudposse/copyright-header.svg?branch=master)](https://travis-ci.org/cloudposse/copyright-header) [![Latest Release](https://img.shields.io/github/release/cloudposse/copyright-header.svg)](https://github.com/cloudposse/copyright-header/releases) [![Slack Community](https://slack.cloudposse.com/badge.svg)](https://slack.cloudposse.com)
 
 
 Copyright Header is a utility to manipulate licenses on source code.
@@ -175,6 +175,8 @@ Work directly with our team of DevOps experts via email, slack, and video confer
 
 We provide *commercial support* for all of our [Open Source][github] projects. As a *Dedicated Support* customer, you have access to our team of subject matter experts at a fraction of the cost of a fulltime engineer. 
 
+[![E-Mail](https://img.shields.io/badge/email-hello@cloudposse.com-blue.svg)](mailto:hello@cloudposse.com)
+
 - **Questions.** We'll use a Shared Slack channel between your team and ours.
 - **Troubleshooting.** We'll help you triage why things aren't working.
 - **Code Reviews.** We'll review your Pull Requests and provide constructive feedback.
@@ -182,6 +184,7 @@ We provide *commercial support* for all of our [Open Source][github] projects. A
 - **Build New Terraform Modules.** We'll develop original modules to provision infrastructure.
 - **Cloud Architecture.** We'll assist with your cloud strategy and design.
 - **Implementation.** We'll provide hands on support to implement our reference architectures. 
+
 
 ## Community Forum
 
@@ -269,44 +272,44 @@ Check out [our other projects][github], [apply for a job][jobs], or [hire us][hi
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 
   [osterman_homepage]: https://github.com/osterman
-  [osterman_avatar]: http://s.gravatar.com/avatar/88c480d4f73b813904e00a5695a454cb?s=144
+  [osterman_avatar]: https://github.com/osterman.png?size=150
   [leopoldodonnell_homepage]: https://github.com/leopoldodonnell
-  [leopoldodonnell_avatar]: https://avatars1.githubusercontent.com/u/135395?s=460&v=4
+  [leopoldodonnell_avatar]: https://github.com/leopoldodonnell.png?size=150
   [mkristian_homepage]: https://github.com/mkristian
-  [mkristian_avatar]: https://avatars3.githubusercontent.com/u/35058?s=460&v=4
+  [mkristian_avatar]: https://github.com/mkristian.png?size=150
   [g2p_homepage]: https://github.com/g2p
-  [g2p_avatar]: https://avatars1.githubusercontent.com/u/61678?s=460&v=4
+  [g2p_avatar]: https://github.com/g2p.png?size=150
   [thomasrussellmurphy_homepage]: https://github.com/thomasrussellmurphy
-  [thomasrussellmurphy_avatar]: https://avatars2.githubusercontent.com/u/2342884?s=460&v=4
+  [thomasrussellmurphy_avatar]: https://github.com/thomasrussellmurphy.png?size=150
   [kqyang_homepage]: https://github.com/kqyang
-  [kqyang_avatar]: https://avatars1.githubusercontent.com/u/7329892?s=460&v=4
+  [kqyang_avatar]: https://github.com/kqyang.png?size=150
   [Fenntasy_homepage]: https://github.com/Fenntasy
-  [Fenntasy_avatar]: https://avatars0.githubusercontent.com/u/1764664?s=460&v=4
+  [Fenntasy_avatar]: https://github.com/Fenntasy.png?size=150
   [arximboldi_homepage]: https://github.com/arximboldi
-  [arximboldi_avatar]: https://avatars2.githubusercontent.com/u/4521138?s=460&v=4
+  [arximboldi_avatar]: https://github.com/arximboldi.png?size=150
   [TAGC_homepage]: https://github.com/TAGC
-  [TAGC_avatar]: https://avatars0.githubusercontent.com/u/1588951?s=460&v=4
+  [TAGC_avatar]: https://github.com/TAGC.png?size=150
   [dividedmind_homepage]: https://github.com/dividedmind
-  [dividedmind_avatar]: https://avatars2.githubusercontent.com/u/823636?s=460&v=4
+  [dividedmind_avatar]: https://github.com/dividedmind.png?size=150
   [yipdw_homepage]: https://github.com/yipdw
-  [yipdw_avatar]: https://avatars3.githubusercontent.com/u/3859?s=460&v=4
+  [yipdw_avatar]: https://github.com/yipdw.png?size=150
   [azakus_homepage]: https://github.com/azakus
-  [azakus_avatar]: https://avatars2.githubusercontent.com/u/46725?s=460&v=4
+  [azakus_avatar]: https://github.com/azakus.png?size=150
   [crzysdrs_homepage]: https://github.com/crzysdrs
-  [crzysdrs_avatar]: https://avatars2.githubusercontent.com/u/3467368?s=460&v=4
+  [crzysdrs_avatar]: https://github.com/crzysdrs.png?size=150
   [mbd-dbc-dk_homepage]: https://github.com/mbd-dbc-dk
-  [mbd-dbc-dk_avatar]: https://avatars3.githubusercontent.com/u/1001078?s=460&v=4
+  [mbd-dbc-dk_avatar]: https://github.com/mbd-dbc-dk.png?size=150
   [psy-q_homepage]: https://github.com/psy-q
-  [psy-q_avatar]: https://avatars1.githubusercontent.com/u/87557?s=460&v=4
+  [psy-q_avatar]: https://github.com/psy-q.png?size=150
   [bstopp_homepage]: https://github.com/bstopp
-  [bstopp_avatar]: https://avatars3.githubusercontent.com/u/6520270?s=460&v=4
+  [bstopp_avatar]: https://github.com/bstopp.png?size=150
   [colindean_homepage]: https://github.com/colindean
-  [colindean_avatar]: https://avatars1.githubusercontent.com/u/197224?s=460&v=4
+  [colindean_avatar]: https://github.com/colindean.png?size=150
   [wshamim_homepage]: https://github.com/wshamim
-  [wshamim_avatar]: https://avatars0.githubusercontent.com/u/12794050?s=460&v=4
+  [wshamim_avatar]: https://github.com/wshamim.png?size=150
   [halo_homepage]: https://github.com/halo
-  [halo_avatar]: https://avatars1.githubusercontent.com/u/11441?s=460&v=4
+  [halo_avatar]: https://github.com/halo.png?size=150
   [lloydde_homepage]: https://github.com/lloydde
-  [lloydde_avatar]: https://avatars3.githubusercontent.com/u/962387?s=460&v=4
+  [lloydde_avatar]: https://github.com/lloydde.png?size=150
 
 
