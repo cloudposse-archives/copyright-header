@@ -11,7 +11,7 @@ name: copyright-header
 #logo: docs/logo.png
 
 # License of this project
-license: "APACHE2"
+license: "GPL3"
 
 # Canonical GitHub repo
 github_repo: cloudposse/copyright-header
