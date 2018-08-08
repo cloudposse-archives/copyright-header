@@ -228,4 +228,11 @@ rust:
     open: '/*\n'
     close: ' */\n\n'
     prefix: ' * '
-
+# Conf files i.e. apache config, splunk.conf files
+conf:
+  ext:  ['.conf']
+  after: ['^#!']
+  comment:
+    open:   '#\n'
+    close:  '#\n'
+    prefix: '# '
