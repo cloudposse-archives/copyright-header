@@ -1,7 +1,7 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 RUN apt-get update && \
-    apt-get -y install ruby ruby-dev git make build-essential libicu-dev zlib1g-dev cmake pkg-config
+    apt-get -y install ruby ruby-dev git make build-essential libicu-dev zlib1g-dev cmake pkg-config cmake libssl-dev
 
 ADD . /tmp/copyright-header/
 ADD .git /tmp/copyright-header/.git
