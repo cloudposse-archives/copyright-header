@@ -228,10 +228,10 @@ module CopyrightHeader
               write(path, contents)
             end
           else
-            STDERR.puts "SKIP #{path}; unsupported"
+            STDERR.puts "SKIP #{path}; unsupported #{@syntax.ext(path)}"
           end
         rescue Exception => e
-          STDERR.puts "SKIP #{path}; #{e.message}"
+          STDERR.puts "SKIP EXCEPTION #{path}; #{e.message}"
         end
       end
     end
