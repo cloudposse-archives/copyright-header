@@ -40,7 +40,7 @@ Full list of supported arguments:
         -n, --dry-run                    Output the parsed files to STDOUT
         -o, --output-dir DIR             Use DIR as output directory
             --license-file FILE          Use FILE as header (instead of using --license argument)
-            --license [AGPL3|ASL2|BSD-2-CLAUSE|BSD-3-CLAUSE|BSD-4-CLAUSE|GPL3|MIT]
+            --license [AGPL3|APACHE2.0|ASL2|BSD-2-CLAUSE|BSD-3-CLAUSE|BSD-4-CLAUSE|GPL3|MIT]
                                          Use LICENSE as header
             --copyright-software NAME    The common name for this piece of software (e.g. "Copyright Header")
             --copyright-software-description DESC
@@ -71,7 +71,7 @@ Add a GPL3 License header to a file:
                      --copyright-software-description "This is the description of the software." \
                      --copyright-year 2012-2017 \
                      --output-dir /tmp \
-                     --dry-run 
+                     --dry-run
 
 Remove the header created in the previous step (without --dry-run argument):
 
@@ -82,7 +82,7 @@ Remove the header created in the previous step (without --dry-run argument):
                      --copyright-software-description 'This is the description of the software.' \
                      --copyright-year 2012-2017 \
                      --output-dir /tmp \
-                     --dry-run 
+                     --dry-run
 
 Command used to generate copyright headers for this script:
 
@@ -141,7 +141,7 @@ docker run --rm --volume `pwd`:/usr/src/ osterman/copyright-header:latest \
 
 ## Make
 
-Here is how we typically use it in our [`Makefile`](Makefile). 
+Here is how we typically use it in our [`Makefile`](Makefile).
 
 Check out the Cloud Posse [`build-harness`](https://github.com/cloudposse/build-harness/) for other neat tricks.
 
@@ -150,7 +150,7 @@ Contributors
 ------------
 
 <https://github.com/osterman/copyright-header/graphs/contributors>
-    
+
 Contributing
 ------------
 
@@ -166,4 +166,3 @@ Contact Information
 Author: Erik Osterman  
 E-mail: <e@osterman.com>  
 Homepage: <http://www.osterman.com/>  
-
