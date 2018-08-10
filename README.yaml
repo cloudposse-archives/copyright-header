@@ -128,7 +128,7 @@ examples: |-
 
   You can specify an alternative syntax configuration file using the `--syntax` argument.
 
-  Rake
+  ## Rake
   ----
 
   The above example can be performed as rake task inside a Rakefile:

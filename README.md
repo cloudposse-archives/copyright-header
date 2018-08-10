@@ -122,7 +122,7 @@ Paths can be either files or directories. It will recursively traverse the direc
 
 You can specify an alternative syntax configuration file using the `--syntax` argument.
 
-Rake
+## Rake
 ----
 
 The above example can be performed as rake task inside a Rakefile:
