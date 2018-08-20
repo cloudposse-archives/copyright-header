@@ -42,7 +42,7 @@ module CopyrightHeader
     def load_template
       if File.exists?(@options[:license_file])
         template = ::ERB.new File.new(@options[:license_file]).read, 0, '%'
-        license = template.result(OpenStruct.new(@options).instance_eval { binding }) 
+        license = template.result(OpenStruct.new(@options).instance_eval { binding })
         license = word_wrap(license)
         license
       else
@@ -219,7 +219,7 @@ module CopyrightHeader
             next
           end
 
-          if @syntax.supported?(path) 
+          if @syntax.supported?(path)
             header = @syntax.header(path)
             contents = header.send(method, @license)
             if contents.nil?
@@ -228,10 +228,10 @@ module CopyrightHeader
               write(path, contents)
             end
           else
-            STDERR.puts "SKIP #{path}; unsupported"
+            STDERR.puts "SKIP #{path}; unsupported #{@syntax.ext(path)}"
           end
         rescue Exception => e
-          STDERR.puts "SKIP #{path}; #{e.message}"
+          STDERR.puts "SKIP #{path}; exception=#{e.message}"
         end
       end
     end
@@ -247,7 +247,7 @@ module CopyrightHeader
     end
 
     def write(file, contents)
-      if @options[:dry_run] 
+      if @options[:dry_run]
         STDERR.puts "UPDATE #{file} [dry-run]"
         STDERR.puts contents
       elsif @options[:output_dir].nil?

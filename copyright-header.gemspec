@@ -3,6 +3,11 @@
 $:.push File.expand_path("../lib", __FILE__)
 require "copyright_header/version"
 
+if RUBY_VERSION =~ /1.9/ # assuming you're running Ruby ~1.9
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end
+
 Gem::Specification.new do |s|
   s.name        = "copyright-header"
   s.version     = CopyrightHeader::VERSION
@@ -19,5 +24,5 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.extra_rdoc_files = ['README.md', 'LICENSE', 'AUTHORS', 'contrib/syntax.yml' ]
   s.require_paths = ["lib"]
-  s.add_dependency('github-linguist')
+  s.add_runtime_dependency('github-linguist','~>6.0')
 end
