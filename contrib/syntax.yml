@@ -108,6 +108,13 @@ java:
     open:   '/*\n'
     close:  ' */\n\n'
     prefix: ' * '
+    
+kotlin:
+  ext: ['.kt']
+  comment:
+    open:   '/*\n'
+    clone:  ' */\n\n'
+    prefix: ' * '
 
 golang:
   ext: ['.go']
