@@ -13,7 +13,7 @@ Features
 * Add/remove a copyright headers recursively on source files
 * Customize the syntax configuration for how to write out comments
 * Built-in support for GPL3 and MIT licenses
-* Supports custom licenes with `--license-file` argument
+* Supports custom licenses with `--license-file` argument
 * ERB template support
 
 Caveats
