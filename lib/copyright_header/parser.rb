@@ -26,6 +26,7 @@ require 'linguist'
 module CopyrightHeader
   class FileNotFoundException < Exception; end
   class ExistingLicenseException < Exception; end
+  class EmptyFileException < Exception; end
 
   class License
     @lines = []
@@ -84,6 +85,10 @@ module CopyrightHeader
       if copyright.nil?
         STDERR.puts "Copyright is nil"
         return nil
+      end
+
+      if @contents.strip.empty?
+        raise EmptyFileException.new("file is empty")
       end
 
       text = ""
