@@ -242,3 +242,10 @@ conf:
     open:   '#\n'
     close:  '#\n'
     prefix: '# '
+
+lisp:
+  ext: ['.scm','.rkt','.el','.lisp','.cl']
+  comment:
+    open: ';; \n'
+    close: ';; \n'
+    prefix: ';; '
